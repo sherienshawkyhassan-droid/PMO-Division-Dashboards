@@ -8,6 +8,11 @@
   <title>TQM Analytics Hub - PMOD Head Only | ABK</title>
 
   <style>
+
+    /* =====================================================
+       ABK / TQM COLOURS
+    ===================================================== */
+
     :root {
       --abk-blue: #005B8E;
       --abk-dark-blue: #00456D;
@@ -15,7 +20,9 @@
       --tqm-green: #00843D;
       --page-bg: #F4F7FA;
       --text: #4B5563;
+      --light-text: #6B7280;
       --white: #FFFFFF;
+      --border: #D9E6EF;
     }
 
     * {
@@ -44,18 +51,25 @@
       font-weight: 600;
     }
 
+
     /* =====================================================
        HEADER
     ===================================================== */
 
     .header {
+      width: 100%;
       background: var(--white);
+
       border-bottom: 5px solid var(--abk-yellow);
+
       padding: 18px 6%;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 24px;
+
       box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
     }
 
@@ -66,7 +80,7 @@
     }
 
     .header-text p {
-      color: #666;
+      color: #555;
       font-size: 12pt;
     }
 
@@ -77,15 +91,18 @@
       display: block;
     }
 
+
     /* =====================================================
-       HOME PAGE
+       MAIN PAGE
     ===================================================== */
 
     .container {
-      width: 90%;
-      max-width: 1250px;
-      margin: 38px auto 50px;
+      width: 92%;
+      max-width: 1300px;
+
+      margin: 35px auto 50px;
     }
+
 
     /* =====================================================
        WELCOME SECTION
@@ -93,302 +110,585 @@
 
     .welcome {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 25px;
     }
 
     .welcome h2 {
       color: var(--abk-blue);
-      font-size: 20pt;
-      margin-bottom: 10px;
+
+      font-size: 21pt;
+
+      margin-bottom: 8px;
     }
 
-    .welcome > p {
-      color: #6B7280;
+    .welcome-description {
+      color: var(--light-text);
+
+      font-size: 12pt;
+
       line-height: 1.5;
     }
 
+
     /* =====================================================
-       PMOD HEAD ACCESS MESSAGE
+       PMOD HEAD ACCESS NOTE
     ===================================================== */
 
     .access-note {
-      margin: 16px auto 0;
+
       max-width: 900px;
-      color: var(--tqm-green) !important;
-      font-family: "Tw Cen MT", Arial, sans-serif;
-      font-size: 12pt;
-      font-weight: bold;
-      line-height: 1.5;
-      padding: 12px 18px;
+
+      margin: 16px auto 0;
+
+      padding: 12px 20px;
+
       background: #F0F9F4;
-      border-radius: 8px;
+
+      color: var(--tqm-green);
+
+      border: 1px solid #A7D8BC;
+
       border-left: 5px solid var(--tqm-green);
       border-right: 5px solid var(--tqm-green);
+
+      border-radius: 8px;
+
+      font-size: 12pt;
+      font-weight: bold;
+
+      line-height: 1.5;
     }
 
+
     /* =====================================================
-       TQM BANNER IMAGE
+       TQM VISUAL BANNER
     ===================================================== */
 
     .tqm-banner {
+
       width: 100%;
+
       margin: 28px auto 32px;
+
       background: var(--white);
+
+      border: 1px solid #BCD7EA;
+
       border-radius: 14px;
+
       overflow: hidden;
-      border: 1px solid #D9E6EF;
-      border-top: 5px solid var(--abk-yellow);
-      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
     }
 
     .tqm-banner img {
+
       width: 100%;
+
       height: auto;
+
       display: block;
+
       object-fit: cover;
     }
+
 
     /* =====================================================
        DASHBOARD GRID
     ===================================================== */
 
     .dashboard-grid {
+
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 28px;
+
+      align-items: stretch;
     }
+
 
     /* =====================================================
        DASHBOARD CARDS
     ===================================================== */
 
     .dashboard-card {
+
       background: var(--white);
-      min-height: 335px;
+
+      min-height: 350px;
+
       padding: 30px;
+
       border-radius: 14px;
+
       border-top: 5px solid var(--abk-yellow);
+
       box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: space-between;
+
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
     }
 
+
     .dashboard-card:hover {
+
       transform: translateY(-4px);
+
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     }
 
-    .dashboard-card h3 {
-      color: var(--abk-blue);
-      font-size: 18pt;
-      margin-bottom: 14px;
+
+    /* =====================================================
+       DASHBOARD HEADER
+    ===================================================== */
+
+    .dashboard-title-area {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-bottom: 18px;
     }
 
+
+    .dashboard-icon {
+
+      width: 60px;
+      height: 60px;
+
+      min-width: 60px;
+
+      border-radius: 50%;
+
+      background: #EAF4FA;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 28px;
+
+      color: var(--abk-blue);
+    }
+
+
+    .dashboard-card h3 {
+
+      color: var(--abk-blue);
+
+      font-size: 18pt;
+
+      margin: 0;
+    }
+
+
+    /* =====================================================
+       DASHBOARD DESCRIPTION
+    ===================================================== */
+
     .dashboard-description {
-      color: #6B7280;
+
+      color: var(--light-text);
+
       line-height: 1.6;
+
       margin-bottom: 20px;
     }
 
+
     /* =====================================================
-       OWNERSHIP BOX
+       DASHBOARD OWNERSHIP
     ===================================================== */
 
     .dashboard-owner {
-      background: #F4F7FA;
+
+      background: #F5F9FC;
+
+      border: 1px solid #D4E5F0;
+
       border-left: 4px solid var(--abk-yellow);
+
       padding: 14px 16px;
+
       margin-bottom: 24px;
-      border-radius: 5px;
+
+      border-radius: 7px;
+
       line-height: 1.65;
     }
 
+
     .dashboard-owner strong {
+
       color: var(--abk-blue);
     }
 
+
+    .owner-name {
+
+      color: #333;
+
+      font-weight: 600;
+    }
+
+
     /* =====================================================
-       DASHBOARD BUTTON
+       VIEW DASHBOARD BUTTON
     ===================================================== */
 
     .dashboard-button {
+
       width: 100%;
+
       border: none;
+
       border-radius: 8px;
+
       padding: 14px 18px;
+
       background: var(--abk-blue);
+
       color: var(--white);
+
       cursor: pointer;
+
       font-family: "Tw Cen MT", Arial, sans-serif;
+
       font-size: 12pt;
+
       font-weight: 600;
+
       transition:
         background 0.2s ease,
         transform 0.2s ease;
     }
 
+
     .dashboard-button:hover {
+
       background: var(--abk-dark-blue);
+
       transform: translateY(-1px);
     }
+
 
     /* =====================================================
        POWER BI VIEWER
     ===================================================== */
 
     #viewerPage {
+
       display: none;
+
       position: fixed;
+
       inset: 0;
+
       width: 100vw;
+
       height: 100vh;
+
       background: var(--white);
+
       z-index: 9999;
     }
 
+
     /* =====================================================
-       VIEWER TOOLBAR
+       POWER BI VIEWER TOOLBAR
     ===================================================== */
 
     .viewer-toolbar {
+
       height: 68px;
+
       background: var(--white);
+
       border-bottom: 5px solid var(--abk-yellow);
+
       display: grid;
+
       grid-template-columns: 220px 1fr 220px;
+
       align-items: center;
+
       padding: 0 18px;
+
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+
       position: relative;
+
       z-index: 10000;
     }
 
+
+    /* =====================================================
+       BACK BUTTON
+    ===================================================== */
+
     .back-button {
+
       justify-self: start;
+
       border: none;
+
       border-radius: 7px;
+
       padding: 10px 16px;
+
       background: var(--abk-blue);
+
       color: var(--white);
+
       cursor: pointer;
+
       font-family: "Tw Cen MT", Arial, sans-serif;
+
       font-size: 12pt;
+
       font-weight: 600;
     }
 
+
     .back-button:hover {
+
       background: var(--abk-dark-blue);
     }
 
+
+    /* =====================================================
+       VIEWER TITLE
+    ===================================================== */
+
     #viewerTitle {
+
       justify-self: center;
+
       color: var(--abk-blue);
+
       font-size: 18pt;
+
       font-weight: 600;
+
       text-align: center;
     }
 
+
+    /* =====================================================
+       VIEWER LOGO
+    ===================================================== */
+
     .viewer-logo {
+
       justify-self: end;
+
       height: 46px;
+
       width: auto;
+
       object-fit: contain;
     }
+
 
     /* =====================================================
        POWER BI REPORT CONTAINER
     ===================================================== */
 
     #reportContainer {
+
       position: absolute;
+
       top: 68px;
+
       left: 0;
+
       width: 100%;
+
       height: calc(100vh - 68px);
+
       background: var(--white);
+
       overflow: hidden;
     }
 
+
     #reportContainer iframe {
+
       width: 100%;
+
       height: 100%;
+
       border: 0;
+
       display: block;
     }
+
 
     /* =====================================================
        FOOTER
     ===================================================== */
 
     footer {
+
       margin-top: 60px;
+
       padding: 18px;
+
       background: var(--abk-blue);
+
       color: var(--white);
+
       text-align: center;
+
       border-top: 5px solid var(--abk-yellow);
+
+      line-height: 1.5;
     }
 
+
     /* =====================================================
-       MOBILE
+       TABLET / MOBILE
     ===================================================== */
 
     @media (max-width: 800px) {
 
       .dashboard-grid {
+
         grid-template-columns: 1fr;
       }
 
+
       .header {
+
         padding: 15px 5%;
       }
 
+
       .header-text h1 {
+
         font-size: 18pt;
       }
 
+
+      .header-text p {
+
+        font-size: 10.5pt;
+      }
+
+
       .abk-logo {
+
         height: 50px;
       }
 
-      .tqm-banner {
-        margin-top: 22px;
+
+      .container {
+
+        width: 94%;
+
+        margin-top: 25px;
       }
 
+
+      .welcome h2 {
+
+        font-size: 18pt;
+      }
+
+
+      .access-note {
+
+        font-size: 11pt;
+
+        padding: 10px 14px;
+      }
+
+
+      .tqm-banner {
+
+        margin-top: 22px;
+
+        margin-bottom: 25px;
+      }
+
+
+      .dashboard-card {
+
+        min-height: auto;
+
+        padding: 24px;
+      }
+
+
+      .dashboard-icon {
+
+        width: 50px;
+
+        height: 50px;
+
+        min-width: 50px;
+
+        font-size: 23px;
+      }
+
+
+      .dashboard-card h3 {
+
+        font-size: 16pt;
+      }
+
+
       .viewer-toolbar {
+
         grid-template-columns: auto 1fr auto;
+
         padding: 0 10px;
       }
 
+
       #viewerTitle {
+
         display: none;
       }
 
+
       .viewer-logo {
+
         height: 36px;
       }
 
-      .access-note {
-        font-size: 11pt;
-        padding: 10px 14px;
-      }
     }
 
   </style>
+
 </head>
 
 
 <body>
 
+
   <!-- =====================================================
        HEADER
   ====================================================== -->
 
-  <header class="header" id="mainHeader">
+  <header
+    class="header"
+    id="mainHeader"
+  >
 
     <div class="header-text">
 
@@ -402,6 +702,7 @@
 
     </div>
 
+
     <img
       src="abk-logo.png"
       alt="ABK Logo"
@@ -411,15 +712,20 @@
   </header>
 
 
+
   <!-- =====================================================
        HOME PAGE
   ====================================================== -->
 
-  <main class="container" id="homePage">
+  <main
+    class="container"
+    id="homePage"
+  >
 
-    <!-- =====================================================
-         WELCOME
-    ====================================================== -->
+
+    <!-- =================================================
+         WELCOME SECTION
+    ================================================== -->
 
     <section class="welcome">
 
@@ -427,22 +733,29 @@
         TQM Management Dashboards
       </h2>
 
-      <p>
+
+      <p class="welcome-description">
+
         Select a dashboard to view detailed management information
         and performance insights.
+
       </p>
 
-      <p class="access-note">
+
+      <div class="access-note">
+
         This Analytics Hub is dedicated to PMOD Head access and provides
         centralized visibility over key TQM activities and CAPEX monitoring.
-      </p>
+
+      </div>
 
     </section>
 
 
-    <!-- =====================================================
-         TQM IMAGE
-    ====================================================== -->
+
+    <!-- =================================================
+         TQM VISUAL BANNER
+    ================================================== -->
 
     <section class="tqm-banner">
 
@@ -454,97 +767,159 @@
     </section>
 
 
-    <!-- =====================================================
+
+    <!-- =================================================
          DASHBOARD CARDS
-    ====================================================== -->
+    ================================================== -->
 
     <div class="dashboard-grid">
 
 
-      <!-- =================================================
+      <!-- ===============================================
            TQM ACTIVITIES DASHBOARD
-      ================================================== -->
+      ================================================ -->
 
       <div class="dashboard-card">
 
         <div>
 
-          <h3>
-            TQM Activities Dashboard
-          </h3>
+
+          <div class="dashboard-title-area">
+
+            <div class="dashboard-icon">
+              ✓
+            </div>
+
+
+            <h3>
+              TQM Activities Dashboard
+            </h3>
+
+          </div>
+
 
           <p class="dashboard-description">
+
             Provides a consolidated view of Total Quality Management
             activities, initiatives, deliverables, progress and performance
             monitoring to support PMOD Head oversight, management follow-up
             and visibility over TQM achievements.
+
           </p>
+
 
           <div class="dashboard-owner">
 
-            <strong>Created & Updated by:</strong>
+            <strong>
+              Created & Updated by:
+            </strong>
+
             <br>
-            Evrina Emad
+
+            <span class="owner-name">
+              Evrina Emad
+            </span>
 
           </div>
 
         </div>
 
+
         <button
           class="dashboard-button"
-          onclick="openReport('activities')">
+          onclick="openReport('activities')"
+        >
+
           View Dashboard
+
         </button>
 
       </div>
 
 
-      <!-- =================================================
+
+      <!-- ===============================================
            PMO CAPEX DASHBOARD
-      ================================================== -->
+      ================================================ -->
 
       <div class="dashboard-card">
 
         <div>
 
-          <h3>
-            PMO CAPEX Dashboard
-          </h3>
+
+          <div class="dashboard-title-area">
+
+            <div class="dashboard-icon">
+              ↗
+            </div>
+
+
+            <h3>
+              PMO CAPEX Dashboard
+            </h3>
+
+          </div>
+
 
           <p class="dashboard-description">
+
             Provides centralized monitoring of PMO CAPEX activities,
             including CAPEX requests, purchase requisition status,
             progress, processing timelines and related performance
             indicators to support management follow-up and control.
+
           </p>
+
 
           <div class="dashboard-owner">
 
-            <strong>Created by:</strong>
+
+            <strong>
+              Created by:
+            </strong>
+
             <br>
-            Marian Tedaws
+
+            <span class="owner-name">
+              Marian Tedaws
+            </span>
+
 
             <br><br>
 
-            <strong>Updated by:</strong>
+
+            <strong>
+              Updated by:
+            </strong>
+
             <br>
-            Dina Salah
+
+            <span class="owner-name">
+              Dina Salah
+            </span>
+
 
           </div>
 
         </div>
 
+
         <button
           class="dashboard-button"
-          onclick="openReport('capex')">
+          onclick="openReport('capex')"
+        >
+
           View Dashboard
+
         </button>
 
       </div>
 
+
     </div>
 
   </main>
+
 
 
   <!-- =====================================================
@@ -553,17 +928,28 @@
 
   <section id="viewerPage">
 
+
     <div class="viewer-toolbar">
+
 
       <button
         class="back-button"
-        onclick="goHome()">
+        onclick="goHome()"
+      >
+
         ← Dashboard Hub
+
       </button>
 
+
+
       <div id="viewerTitle">
+
         Dashboard
+
       </div>
+
+
 
       <img
         src="abk-logo.png"
@@ -571,11 +957,16 @@
         class="viewer-logo"
       />
 
+
     </div>
+
+
 
     <div id="reportContainer"></div>
 
+
   </section>
+
 
 
   <!-- =====================================================
@@ -584,11 +975,14 @@
 
   <footer id="footer">
 
-    Total Quality Management |
-    PMOD Analytics & Performance Monitoring |
+    Total Quality Management
+    &nbsp; | &nbsp;
+    PMOD Analytics & Performance Monitoring
+    &nbsp; | &nbsp;
     Al Ahli Bank of Kuwait – Egypt
 
   </footer>
+
 
 
   <!-- =====================================================
@@ -597,6 +991,7 @@
 
   <script>
 
+
     /* =====================================================
        POWER BI REPORT CONFIGURATION
     ====================================================== */
@@ -604,44 +999,60 @@
     const reports = {
 
 
-      /* =================================================
+      /* ===============================================
          TQM ACTIVITIES DASHBOARD
-      ================================================== */
+      ================================================ */
 
       activities: {
 
-        title: "TQM Activities Dashboard",
+        title:
+          "TQM Activities Dashboard",
 
         embedUrl:
+
           "https://app.powerbi.com/reportEmbed" +
+
           "?reportId=deda385a-e673-463c-b2a0-97b16e82f38c" +
+
           "&autoAuth=true" +
+
           "&ctid=7a09d8f3-71ea-494a-b504-36d7ece273f3" +
+
           "&filterPaneEnabled=false" +
+
           "&navContentPaneEnabled=true"
 
       },
 
 
-      /* =================================================
+
+      /* ===============================================
          PMO CAPEX DASHBOARD
-      ================================================== */
+      ================================================ */
 
       capex: {
 
-        title: "PMO CAPEX Dashboard",
+        title:
+          "PMO CAPEX Dashboard",
 
         embedUrl:
+
           "https://app.powerbi.com/reportEmbed" +
+
           "?reportId=79074060-1d39-4bce-80ff-0c074e65da7d" +
+
           "&autoAuth=true" +
+
           "&ctid=7a09d8f3-71ea-494a-b504-36d7ece273f3" +
+
           "&filterPaneEnabled=false" +
+
           "&navContentPaneEnabled=true"
 
       }
 
     };
+
 
 
     /* =====================================================
@@ -650,64 +1061,105 @@
 
     function openReport(reportKey) {
 
-      const reportInfo = reports[reportKey];
+
+      const reportInfo =
+        reports[reportKey];
+
 
       if (!reportInfo) {
 
-        alert("Dashboard configuration was not found.");
+        alert(
+          "Dashboard configuration was not found."
+        );
 
         return;
 
       }
 
 
-      /* Hide landing page */
 
-      document.getElementById("mainHeader").style.display = "none";
+      /* -----------------------------------------------
+         HIDE LANDING PAGE
+      ------------------------------------------------ */
 
-      document.getElementById("homePage").style.display = "none";
-
-      document.getElementById("footer").style.display = "none";
-
-
-      /* Show Power BI viewer */
-
-      document.getElementById("viewerPage").style.display = "block";
+      document
+        .getElementById("mainHeader")
+        .style.display = "none";
 
 
-      /* Set dashboard title */
+      document
+        .getElementById("homePage")
+        .style.display = "none";
 
-      document.getElementById("viewerTitle").textContent =
-        reportInfo.title;
+
+      document
+        .getElementById("footer")
+        .style.display = "none";
 
 
-      /* Load Power BI */
+
+      /* -----------------------------------------------
+         SHOW POWER BI VIEWER
+      ------------------------------------------------ */
+
+      document
+        .getElementById("viewerPage")
+        .style.display = "block";
+
+
+
+      /* -----------------------------------------------
+         SET DASHBOARD TITLE
+      ------------------------------------------------ */
+
+      document
+        .getElementById("viewerTitle")
+        .textContent = reportInfo.title;
+
+
+
+      /* -----------------------------------------------
+         LOAD POWER BI REPORT
+      ------------------------------------------------ */
 
       const container =
-        document.getElementById("reportContainer");
+        document.getElementById(
+          "reportContainer"
+        );
 
 
       container.innerHTML = `
 
         <iframe
+
           src="${reportInfo.embedUrl}"
+
           title="${reportInfo.title}"
+
           allowfullscreen="true"
+
           allow="fullscreen"
+
           loading="eager">
+
         </iframe>
 
       `;
 
 
-      /* Prevent background scrolling */
 
-      document.body.style.overflow = "hidden";
+      /* -----------------------------------------------
+         PREVENT BACKGROUND SCROLLING
+      ------------------------------------------------ */
+
+      document.body.style.overflow =
+        "hidden";
 
 
       window.scrollTo(0, 0);
 
     }
+
 
 
     /* =====================================================
@@ -719,26 +1171,49 @@
 
       /* Remove Power BI iframe */
 
-      document.getElementById("reportContainer").innerHTML = "";
+      document
+        .getElementById("reportContainer")
+        .innerHTML = "";
 
 
-      /* Hide Power BI viewer */
 
-      document.getElementById("viewerPage").style.display = "none";
+      /* Hide viewer */
+
+      document
+        .getElementById("viewerPage")
+        .style.display = "none";
+
+
+
+      /* Restore header */
+
+      document
+        .getElementById("mainHeader")
+        .style.display = "flex";
+
 
 
       /* Restore landing page */
 
-      document.getElementById("mainHeader").style.display = "flex";
-
-      document.getElementById("homePage").style.display = "block";
-
-      document.getElementById("footer").style.display = "block";
+      document
+        .getElementById("homePage")
+        .style.display = "block";
 
 
-      /* Restore scrolling */
 
-      document.body.style.overflow = "auto";
+      /* Restore footer */
+
+      document
+        .getElementById("footer")
+        .style.display = "block";
+
+
+
+      /* Restore page scrolling */
+
+      document.body.style.overflow =
+        "auto";
+
 
 
       window.scrollTo(0, 0);
@@ -746,20 +1221,30 @@
     }
 
 
+
     /* =====================================================
        ESC KEY RETURNS TO HUB
     ====================================================== */
 
     document.addEventListener(
+
       "keydown",
+
       function(event) {
+
 
         if (event.key === "Escape") {
 
-          const viewer =
-            document.getElementById("viewerPage");
 
-          if (viewer.style.display === "block") {
+          const viewer =
+            document.getElementById(
+              "viewerPage"
+            );
+
+
+          if (
+            viewer.style.display === "block"
+          ) {
 
             goHome();
 
@@ -768,9 +1253,12 @@
         }
 
       }
+
     );
 
+
   </script>
+
 
 </body>
 
